@@ -4,6 +4,9 @@ body {
   margin: 0;
 }
 #map {
+  position: absolute;
+  top: 56px;
+  bottom: 0;
   height: 100%;
   width: 100%;
 }

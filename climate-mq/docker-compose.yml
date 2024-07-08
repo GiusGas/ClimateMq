@@ -18,7 +18,7 @@ services:
     build:
       dockerfile: Dockerfile
     container_name: climatemq
-    command: wait-for-it postgres:5432 -- python manage.py runserver 0.0.0.0:8000 --settings=geodjango.settings
+    command: bash start.sh
     env_file:
       - production.env
     restart: unless-stopped

@@ -32,12 +32,27 @@ async function load_stations() {
   
 async function render_stations() {
   const stations = await load_stations();
-  L.geoJSON(stations)
-    .bindPopup(
-      (layer) =>
-        layer.feature.properties.name
-    )
-    .addTo(map);
+  L.geoJSON(stations, {
+    style: function(feature) {
+      var consuming = feature.properties.consuming
+      console
+      if (consuming == true) {
+        return { bubblingMouseEvents : true };
+      } else {
+        return { color : "red" };
+      }
+    },
+    onEachFeature: function(feature, layer) {
+      if (feature.properties.consuming == true) {
+        layer.bindPopup(feature.properties.name + ", consuming...")
+      } else {
+        layer.bindPopup(feature.properties.name)
+      }
+      layer.on('mouseover', function() { layer.openPopup(); })
+      layer.on('mouseout', function() { layer.closePopup(); })
+    }
+  })
+  .addTo(map);
 }
   
 map.on("moveend", render_stations);

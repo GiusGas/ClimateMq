@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Stations List{% endblock %}
+{% block content %}
+<div id="container" class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for station in station_list %}
+      <tr>
+        <th scope="row">{{station.id}}</th>
+        <td>{{station.name}}</td>
+        <td>{{station.location.coords.1}}</td>
+        <td>{{station.location.coords.0}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

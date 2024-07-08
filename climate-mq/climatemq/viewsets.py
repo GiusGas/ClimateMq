@@ -2,10 +2,13 @@ import logging
 
 from rest_framework import viewsets
 from rest_framework_gis import filters
+from django_filters.rest_framework import DjangoFilterBackend
+from django_serverside_datatable.views import ServerSideDatatableView
 
-from climatemq.models import Station
+from climatemq.models import Station, Data
 from climatemq.serializers import (
     StationSerializer,
+    DataSerializer,
 )
 
 from climatemq.views import read_temperature
@@ -21,6 +24,19 @@ class StationViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Station.objects.all()
     serializer_class = StationSerializer
 
-    def list(self, request, *args, **kwargs):
-        read_temperature()
-        return super.list(self, request, *args, **kwargs)
+#    def read(self, request, *args, **kwargs):
+#        read_temperature()
+
+class DataViewSet(viewsets.ReadOnlyModelViewSet):
+
+    queryset = Data.objects.all()
+    serializer_class = DataSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['station__id']
+
+class DataTableSet(ServerSideDatatableView):
+    queryset = Data.objects.all()
+    serializer_class = DataSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['station__id']
+    columns = ['id', 'value', 'unit_symbol', 'variable_name']

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Station Dashboard{% endblock %}
+{% block content %}
+<div id="container" class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+<div class="mb-3">
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        {% for station in station_list %}
+        <option value={{station.id}}>{{station.name}}</option>
+        {% endfor %}
+    </select>
+</div>
+<div class="table-responsive">
+<table class="table" id="myTable">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Value</th>
+        <th scope="col">Unit</th>
+        <th scope="col">Variable</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if data_list %}
+      {% for data in data_list %}
+      <tr>
+        <th scope="row">{{data.id}}</th>
+        <td>{{data.value}}</td>
+        <td>{{data.variable.unit.symbol}}</td>
+        <td>{{data.variable.name}}</td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+    </tbody>
+  </table>
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">2</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</div>
+{% endblock %}
+{% block js %}
+<!--<script src="{% static 'select_station.js' %}"></script>-->
+<script src="{% static 'table_station.js' %}"></script>
+{% endblock %}

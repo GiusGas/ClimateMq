@@ -11,7 +11,7 @@ public class Config {
 
 	@Bean
 	public TopicExchange topic() {
-		return new TopicExchange("tut.topic");
+		return new TopicExchange("data");
 	}
 
 //	@Profile("receiver")

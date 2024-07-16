@@ -26,6 +26,10 @@ public class Sender {
 
 //	private final String[] keys = {"quick.orange.rabbit", "lazy.orange.elephant", "quick.orange.fox",
 //			"lazy.brown.fox", "lazy.pink.rabbit", "quick.brown.fox"};
+	
+	public void sendNewStation() {
+		
+	}
 
 	@Scheduled(fixedRate = 5000, initialDelay = 500)
 	public void sendTemperature1() {

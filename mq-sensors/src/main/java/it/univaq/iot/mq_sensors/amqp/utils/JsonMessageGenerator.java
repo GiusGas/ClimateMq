@@ -5,10 +5,13 @@ import java.math.RoundingMode;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.json.JSONObject;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder.SecretKeyFactoryAlgorithm;
 import org.springframework.stereotype.Component;
 
 import it.univaq.iot.mq_sensors.amqp.dto.JsonMessage;
 import it.univaq.iot.mq_sensors.amqp.dto.Location;
+import it.univaq.iot.mq_sensors.amqp.dto.Station;
 
 @Component
 public class JsonMessageGenerator {
@@ -29,6 +32,19 @@ public class JsonMessageGenerator {
 		
 		return json;
 		
+	}
+	
+	public JSONObject generateJsonStation() {
+		
+		Location location = new Location(LATITUDE_1, LONGITUDE_1);	
+		
+		String name = "";
+		String password = new Pbkdf2PasswordEncoder("", 16, 100, SecretKeyFactoryAlgorithm.PBKDF2WithHmacSHA256).encode("station");
+		
+		Station jsonStation = new Station(name, password, location);	
+		JSONObject json = new JSONObject(jsonStation);
+		
+		return json;
 	}
 
 }

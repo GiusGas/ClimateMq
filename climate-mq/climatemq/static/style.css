@@ -3,4 +3,16 @@
 }
 .nav {
     padding-left: 8px;
+    padding-right: 8px;
+}
+.select-on-map {
+    position: relative;
+    z-index: 400;
+    float: right;
+    width: max-content;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+#myTable {
+    visibility: hidden;
 }

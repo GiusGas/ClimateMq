@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Profile;
 public class Config {
 
 	@Bean
-	public TopicExchange topic() {
+	TopicExchange topic() {
 		return new TopicExchange("data");
 	}
 
@@ -60,7 +60,7 @@ public class Config {
 
 	@Profile("sender")
 	@Bean
-	public Sender sender() {
+	Sender sender() {
 		return new Sender();
 	}
 

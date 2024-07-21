@@ -2,10 +2,12 @@ from django.contrib.gis import admin
 
 from climatemq.models import Station, Unit, Variable, Sensor, Data
 
+admin.site.site_url = "/climatemq/map/"
 
 @admin.register(Station)
 class StationAdmin(admin.GISModelAdmin):
-    list_display = ("name", "location")
+    list_display = ("name", "location", "accepted")
+    list_filter = ["accepted"]
 
 @admin.register(Unit)
 class UnitAdmin(admin.GISModelAdmin):

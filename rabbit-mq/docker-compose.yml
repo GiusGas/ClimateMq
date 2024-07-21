@@ -10,8 +10,9 @@ services:
         - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
     networks:
-        - rabbitmq_net
+        - climate-mq_default
 
 networks:
-  rabbitmq_net:
-    driver: bridge
+  climate-mq_default:
+    name: climate-mq_default
+    external: true

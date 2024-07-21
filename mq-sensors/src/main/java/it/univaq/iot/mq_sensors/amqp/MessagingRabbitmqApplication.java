@@ -62,7 +62,7 @@ public class MessagingRabbitmqApplication {
 //    return new MessageListenerAdapter(receiver, "receiveMessage");
 //  }
 
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) {
     SpringApplication.run(MessagingRabbitmqApplication.class, args);
   }
 

@@ -1,21 +1,24 @@
-const apiUrl = '/api/datas/?station__id=';
+const apiUrl = '/api/table_stations/?format=datatables';
 
 $(document).ready( function () {
 
-    $('.form-select').change(function(){
-        //window.location.href = window.location.href.replace(/\/[^\/]*$/, '/'+this.value)
-        var station__id = this.value;
-        
-        $('#myTable').DataTable( {
-          "serverSide": true,
-          "processing": true,
-          "ajax": apiUrl+station__id,
-          columns: [
-              { data: 'id' },
-              { data: 'value' },
-              { data: 'unit_symbol' },
-              { data: 'variable_name' }
-          ]
-        });
+    $('#stationTable').css("visibility", "visible")
+
+    let table = $('#stationTable').DataTable( {
+      "serverSide": true,
+      "processing": true,
+      "destroy": true,
+      "ajax": {
+        "url": apiUrl,
+      },
+      columns: [
+          { data: 'id', name: 'id' },
+          { data: 'name', name: 'name', render: function(data, type, row, meta) {
+            return `<a href="/climatemq/dashboard?selectValue=${row.id}">${data}</a>`;
+            } 
+          },
+          { data: 'latitude', name: 'latitude' },
+          { data: 'longitude', name: 'longitude' }
+      ]
     });
 } );

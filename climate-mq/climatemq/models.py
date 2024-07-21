@@ -1,7 +1,7 @@
 from django.contrib.gis.db import models
 
 class BaseModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=False)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -12,7 +12,10 @@ class Station(BaseModel):
         max_length=255
     )
     location = models.PointField()
-    consuming = models.BooleanField(default=False)
+    accepted = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ('id',)
 
     def __str__(self):
         return self.name
@@ -90,6 +93,9 @@ class Data(BaseModel):
         Station,
         on_delete=models.RESTRICT
     )
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return str(self.value) + self.variable.unit.symbol

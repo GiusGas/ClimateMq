@@ -24,6 +24,14 @@
 {% endblock %}
 {% block content %}
     <div id="map"></div>
+    <div class="mb-3">
+      <select class="form-select select-on-map" aria-label="Default select example">
+          <option value=0 selected>All stations (Open this to select variable)</option>
+          {% for variable in variable_list %}
+          <option value={{variable.id}}>{{variable.name}}</option>
+          {% endfor %}
+      </select>
+  </div>
     <script
       src="{% static 'map.js' %}"
       defer

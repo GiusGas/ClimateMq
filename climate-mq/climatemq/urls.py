@@ -10,5 +10,5 @@ urlpatterns = [
     ),
     path("stations_list/", StationsListView.as_view()),
     path("dashboard/", StationsDashboardView.as_view()),
-    path("dashboard/<int:station_id>", StationDashboardView.as_view())
+    path("dashboard/<int:station_id>", StationDashboardView.as_view()),
 ]

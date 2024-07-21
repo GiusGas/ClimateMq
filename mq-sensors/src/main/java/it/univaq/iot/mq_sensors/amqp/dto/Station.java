@@ -4,14 +4,17 @@ public class Station {
 	
 	private String name;
 	
-	private String password;
+	private String username;
+	
+	private String key;
 	
 	private Location location;
 	
-	public Station(String name, String password, Location location) {
-		this.name = name;
-		this.password = password;
-		this.location = location;
+	public Station(String name, String username, String key, Location location) {
+		this.setName(name);
+		this.setUsername(username);
+		this.setKey(key);
+		this.setLocation(location);
 	}
 
 	public String getName() {
@@ -22,12 +25,12 @@ public class Station {
 		this.name = name;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getKey() {
+		return key;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setKey(String key) {
+		this.key = key;
 	}
 
 	public Location getLocation() {
@@ -36,6 +39,14 @@ public class Station {
 
 	public void setLocation(Location location) {
 		this.location = location;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

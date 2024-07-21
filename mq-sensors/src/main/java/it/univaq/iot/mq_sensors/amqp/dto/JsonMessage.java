@@ -4,24 +4,24 @@ import java.math.BigDecimal;
 
 public class JsonMessage {
 
-	private Location location;
+	private Station station;
 	
 	private BigDecimal detectedData;
 	
 	private String unit;
 	
-	public JsonMessage(Location location, BigDecimal detectedData, String unit) {
-		this.location = location;
+	public JsonMessage(Station station, BigDecimal detectedData, String unit) {
+		this.station = station;
 		this.detectedData = detectedData;
 		this.unit = unit;
 	}
 
-	public Location getLocation() {
-		return location;
+	public Station getStation() {
+		return station;
 	}
 
-	public void setLocation(Location location) {
-		this.location = location;
+	public void setStation(Station station) {
+		this.station = station;
 	}
 
 	public BigDecimal getDetectedData() {

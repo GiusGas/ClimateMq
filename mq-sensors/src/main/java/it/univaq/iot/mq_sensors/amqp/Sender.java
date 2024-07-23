@@ -1,5 +1,7 @@
 package it.univaq.iot.mq_sensors.amqp;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -10,6 +12,8 @@ import it.univaq.iot.mq_sensors.amqp.utils.JsonMessageGenerator;
 
 public class Sender {
 
+	private static final Logger log = LogManager.getLogger(Sender.class);
+	
 	@Autowired
 	private RabbitTemplate template;
 
@@ -25,7 +29,7 @@ public class Sender {
 			StringBuilder builder = new StringBuilder(station.toString());
 			String message = builder.toString();
 			template.convertAndSend(topic.getName(), "station.new", message);
-			System.out.println(" [x] Sent data '" + message + "'");
+			log.info(" [x] Sent new station '" + message + "'");
 		}
 	}
 
@@ -35,7 +39,7 @@ public class Sender {
 			StringBuilder builder = new StringBuilder(temperature.toString());
 			String message = builder.toString();
 			template.convertAndSend(topic.getName(), "sensor.detected", message);
-			System.out.println(" [x] Sent temperature '" + message + "'");
+			log.info(" [x] Sent temperature '" + message + "'");
 		}
 	}
 
@@ -45,7 +49,7 @@ public class Sender {
 			StringBuilder builder = new StringBuilder(precipitation.toString());
 			String message = builder.toString();
 			template.convertAndSend(topic.getName(), "sensor.detected", message);
-			System.out.println(" [x] Sent precipitation '" + message + "'");
+			log.info(" [x] Sent precipitation '" + message + "'");
 		}
 	}
 }

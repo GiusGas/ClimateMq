@@ -6,15 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
+import it.univaq.iot.mq_sensors.amqp.Sender;
 import it.univaq.iot.mq_sensors.amqp.dto.JsonMessage;
 import it.univaq.iot.mq_sensors.amqp.dto.Location;
 import it.univaq.iot.mq_sensors.amqp.dto.Station;
 
 @Component
 public class JsonMessageGenerator {
+	
+	private static final Logger log = LogManager.getLogger(JsonMessageGenerator.class);
 	
 //	private final Double LATITUDE_1 = 42.2309157544403;
 //	private final Double LONGITUDE_1 = 14.390457587640933;

@@ -12,3 +12,8 @@
 If you want to access to the admin panel the credentials are:
 - username: admin 
 - password: admin
+
+## To run the simulated Station and send data to rabbitMQ:
+
+- Import mq-sensors as a Maven project on a Java IDE (e.g. Eclipse)
+- Run the MessagingRabbitmqApplication class (SpringBootApplication)

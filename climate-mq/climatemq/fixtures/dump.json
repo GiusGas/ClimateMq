@@ -1,0 +1,1594 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$bMrVXJBRdxpRLNCj6P1VvR$zLmNQA57crTLMyK73WWqHvSiWxCHlfeyHdOfzsYoEL8=",
+            "last_login": "2024-07-16T18:15:48.139Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@admin.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2024-07-16T18:15:35.427Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$IBXwkE1EdfUxq2ZwPJxDMD$as6eucotqJSfo/zzQ7JzbeS2VfeqXcTEt1llDC0EQeY=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "LancianoCentro",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-07-18T18:34:08Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$5vk0S13iMvwQF3x0104kaS$nCj8aBveYwK2hVMYYdoqs+ELf/2v+rZF5wKjD4JkNeM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "aquilaCentro",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-07-18T18:41:00.691Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$720000$XztTIx0NVpj9Nm3pEo62qe$39Idw7tLd4yvwG56rNgCWkLXzrPlTLMa3jSzxuOqvK8=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "aquilaPettino",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2024-07-21T14:55:28.241Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "climatemq.station",
+        "pk": 1,
+        "fields": {
+            "created_at": "2024-07-17T16:57:35.052Z",
+            "updated_at": "2024-07-18T16:49:28.855Z",
+            "name": "L'Aquila Centro",
+            "location": "SRID=4326;POINT (13.398957331640249 42.34832633009445)",
+            "accepted": true
+        }
+    },
+    {
+        "model": "climatemq.station",
+        "pk": 2,
+        "fields": {
+            "created_at": "2024-07-17T23:29:35.692Z",
+            "updated_at": "2024-07-18T16:49:23.861Z",
+            "name": "L'Aquila Pettino",
+            "location": "SRID=4326;POINT (13.365232454087643 42.36805086696008)",
+            "accepted": true
+        }
+    },
+    {
+        "model": "climatemq.station",
+        "pk": 3,
+        "fields": {
+            "created_at": "2024-07-18T18:34:08.894Z",
+            "updated_at": "2024-07-18T21:33:36.057Z",
+            "name": "Lanciano Centro",
+            "location": "SRID=4326;POINT (14.390457587640933 42.2309157544403)",
+            "accepted": true
+        }
+    },
+    {
+        "model": "climatemq.unit",
+        "pk": 1,
+        "fields": {
+            "created_at": "2024-07-17T16:57:52.128Z",
+            "updated_at": "2024-07-17T16:57:52.128Z",
+            "symbol": "°C",
+            "name": "Celsius degrees"
+        }
+    },
+    {
+        "model": "climatemq.unit",
+        "pk": 2,
+        "fields": {
+            "created_at": "2024-07-18T21:27:31.265Z",
+            "updated_at": "2024-07-18T21:27:31.265Z",
+            "symbol": "mm",
+            "name": "Millimetres"
+        }
+    },
+    {
+        "model": "climatemq.variable",
+        "pk": 1,
+        "fields": {
+            "created_at": "2024-07-17T16:58:07.277Z",
+            "updated_at": "2024-07-17T16:58:07.277Z",
+            "symbol": "TEMP",
+            "name": "Temperature",
+            "unit": 1,
+            "precision": null,
+            "scale": null
+        }
+    },
+    {
+        "model": "climatemq.variable",
+        "pk": 2,
+        "fields": {
+            "created_at": "2024-07-18T21:28:02.409Z",
+            "updated_at": "2024-07-18T21:28:02.409Z",
+            "symbol": "PREC",
+            "name": "Precipitation",
+            "unit": 2,
+            "precision": null,
+            "scale": null
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 1,
+        "fields": {
+            "created_at": "2024-07-17T16:58:30.024Z",
+            "updated_at": "2024-07-17T16:58:30.024Z",
+            "value": 14.0,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 2,
+        "fields": {
+            "created_at": "2024-07-17T16:58:38.083Z",
+            "updated_at": "2024-07-17T16:58:38.083Z",
+            "value": 15.0,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 3,
+        "fields": {
+            "created_at": "2024-07-17T23:29:49.402Z",
+            "updated_at": "2024-07-17T23:29:49.402Z",
+            "value": 17.0,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 4,
+        "fields": {
+            "created_at": "2024-07-18T18:47:28.532Z",
+            "updated_at": "2024-07-18T18:47:28.532Z",
+            "value": 8.5,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 5,
+        "fields": {
+            "created_at": "2024-07-18T18:47:33.508Z",
+            "updated_at": "2024-07-18T18:47:33.508Z",
+            "value": 20.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 6,
+        "fields": {
+            "created_at": "2024-07-18T18:47:38.515Z",
+            "updated_at": "2024-07-18T18:47:38.515Z",
+            "value": 26.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 7,
+        "fields": {
+            "created_at": "2024-07-18T18:47:43.499Z",
+            "updated_at": "2024-07-18T18:47:43.499Z",
+            "value": 27.8,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 8,
+        "fields": {
+            "created_at": "2024-07-18T18:47:48.500Z",
+            "updated_at": "2024-07-18T18:47:48.500Z",
+            "value": -10.1,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 9,
+        "fields": {
+            "created_at": "2024-07-18T18:47:53.497Z",
+            "updated_at": "2024-07-18T18:47:53.497Z",
+            "value": -6.6,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 10,
+        "fields": {
+            "created_at": "2024-07-18T18:47:58.510Z",
+            "updated_at": "2024-07-18T18:47:58.510Z",
+            "value": 27.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 11,
+        "fields": {
+            "created_at": "2024-07-18T18:48:03.505Z",
+            "updated_at": "2024-07-18T18:48:03.505Z",
+            "value": 1.5,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 12,
+        "fields": {
+            "created_at": "2024-07-18T18:48:08.509Z",
+            "updated_at": "2024-07-18T18:48:08.509Z",
+            "value": 27.7,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 13,
+        "fields": {
+            "created_at": "2024-07-18T18:48:13.495Z",
+            "updated_at": "2024-07-18T18:48:13.495Z",
+            "value": 25.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 14,
+        "fields": {
+            "created_at": "2024-07-18T18:48:18.512Z",
+            "updated_at": "2024-07-18T18:48:18.512Z",
+            "value": 29.1,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 15,
+        "fields": {
+            "created_at": "2024-07-18T18:48:23.496Z",
+            "updated_at": "2024-07-18T18:48:23.496Z",
+            "value": 10.2,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 16,
+        "fields": {
+            "created_at": "2024-07-19T18:48:28.513Z",
+            "updated_at": "2024-07-19T18:48:28.513Z",
+            "value": -13.4,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 17,
+        "fields": {
+            "created_at": "2024-07-19T18:48:33.506Z",
+            "updated_at": "2024-07-19T18:48:33.506Z",
+            "value": -5.6,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 18,
+        "fields": {
+            "created_at": "2024-07-20T14:48:44.243Z",
+            "updated_at": "2024-07-20T14:48:44.243Z",
+            "value": 32.4,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 19,
+        "fields": {
+            "created_at": "2024-07-20T14:48:49.150Z",
+            "updated_at": "2024-07-20T14:48:49.150Z",
+            "value": 13.0,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 20,
+        "fields": {
+            "created_at": "2024-07-21T14:48:54.128Z",
+            "updated_at": "2024-07-21T14:48:54.128Z",
+            "value": 6.5,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 21,
+        "fields": {
+            "created_at": "2024-07-21T14:48:59.194Z",
+            "updated_at": "2024-07-21T14:48:59.194Z",
+            "value": -12.6,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 22,
+        "fields": {
+            "created_at": "2024-07-21T14:49:04.126Z",
+            "updated_at": "2024-07-21T14:49:04.126Z",
+            "value": 39.8,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 23,
+        "fields": {
+            "created_at": "2024-07-21T14:49:09.096Z",
+            "updated_at": "2024-07-21T14:49:09.096Z",
+            "value": 32.1,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 24,
+        "fields": {
+            "created_at": "2024-07-21T14:49:14.117Z",
+            "updated_at": "2024-07-21T14:49:14.117Z",
+            "value": -12.0,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 25,
+        "fields": {
+            "created_at": "2024-07-21T14:49:19.103Z",
+            "updated_at": "2024-07-21T14:49:19.103Z",
+            "value": 32.4,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 26,
+        "fields": {
+            "created_at": "2024-07-21T14:49:24.121Z",
+            "updated_at": "2024-07-21T14:49:24.121Z",
+            "value": -1.2,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 27,
+        "fields": {
+            "created_at": "2024-07-21T14:49:29.113Z",
+            "updated_at": "2024-07-21T14:49:29.113Z",
+            "value": 34.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 28,
+        "fields": {
+            "created_at": "2024-07-21T14:49:34.162Z",
+            "updated_at": "2024-07-21T14:49:34.162Z",
+            "value": -13.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 29,
+        "fields": {
+            "created_at": "2024-07-21T14:49:39.119Z",
+            "updated_at": "2024-07-21T14:49:39.119Z",
+            "value": 11.5,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 30,
+        "fields": {
+            "created_at": "2024-07-21T14:49:44.153Z",
+            "updated_at": "2024-07-21T14:49:44.153Z",
+            "value": 24.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 31,
+        "fields": {
+            "created_at": "2024-07-21T14:49:49.124Z",
+            "updated_at": "2024-07-21T14:49:49.124Z",
+            "value": -4.2,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 32,
+        "fields": {
+            "created_at": "2024-07-21T14:49:54.128Z",
+            "updated_at": "2024-07-21T14:49:54.128Z",
+            "value": 24.7,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 33,
+        "fields": {
+            "created_at": "2024-07-21T14:49:59.139Z",
+            "updated_at": "2024-07-21T14:49:59.139Z",
+            "value": 32.9,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 34,
+        "fields": {
+            "created_at": "2024-07-21T14:50:04.150Z",
+            "updated_at": "2024-07-21T14:50:04.150Z",
+            "value": 1.1,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 35,
+        "fields": {
+            "created_at": "2024-07-22T14:50:09.116Z",
+            "updated_at": "2024-07-22T14:50:09.116Z",
+            "value": 29.5,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 36,
+        "fields": {
+            "created_at": "2024-07-22T14:50:14.148Z",
+            "updated_at": "2024-07-22T14:50:14.148Z",
+            "value": 38.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 37,
+        "fields": {
+            "created_at": "2024-07-21T14:51:57.054Z",
+            "updated_at": "2024-07-21T14:51:57.054Z",
+            "value": 7.5,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 38,
+        "fields": {
+            "created_at": "2024-07-21T14:52:01.940Z",
+            "updated_at": "2024-07-21T14:52:01.940Z",
+            "value": -6.4,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 39,
+        "fields": {
+            "created_at": "2024-07-21T14:52:06.958Z",
+            "updated_at": "2024-07-21T14:52:06.958Z",
+            "value": -3.4,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 40,
+        "fields": {
+            "created_at": "2024-07-21T14:52:11.934Z",
+            "updated_at": "2024-07-21T14:52:11.934Z",
+            "value": 24.1,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 41,
+        "fields": {
+            "created_at": "2024-07-21T14:52:16.927Z",
+            "updated_at": "2024-07-21T14:52:16.927Z",
+            "value": -13.4,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 42,
+        "fields": {
+            "created_at": "2024-07-21T14:52:21.926Z",
+            "updated_at": "2024-07-21T14:52:21.926Z",
+            "value": 35.6,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 43,
+        "fields": {
+            "created_at": "2024-07-21T14:52:26.939Z",
+            "updated_at": "2024-07-21T14:52:26.939Z",
+            "value": 21.0,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 44,
+        "fields": {
+            "created_at": "2024-07-21T14:52:31.935Z",
+            "updated_at": "2024-07-21T14:52:31.935Z",
+            "value": -10.0,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 45,
+        "fields": {
+            "created_at": "2024-07-21T14:52:36.939Z",
+            "updated_at": "2024-07-21T14:52:36.939Z",
+            "value": 3.7,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 46,
+        "fields": {
+            "created_at": "2024-07-21T14:52:41.938Z",
+            "updated_at": "2024-07-21T14:52:41.938Z",
+            "value": 32.1,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 47,
+        "fields": {
+            "created_at": "2024-07-21T14:52:46.955Z",
+            "updated_at": "2024-07-21T14:52:46.955Z",
+            "value": -7.9,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 48,
+        "fields": {
+            "created_at": "2024-07-21T14:52:51.941Z",
+            "updated_at": "2024-07-21T14:52:51.941Z",
+            "value": 23.7,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 49,
+        "fields": {
+            "created_at": "2024-07-21T14:52:56.929Z",
+            "updated_at": "2024-07-21T14:52:56.929Z",
+            "value": -7.7,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 50,
+        "fields": {
+            "created_at": "2024-07-21T14:53:01.945Z",
+            "updated_at": "2024-07-21T14:53:01.945Z",
+            "value": 7.3,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 51,
+        "fields": {
+            "created_at": "2024-07-23T14:53:06.960Z",
+            "updated_at": "2024-07-23T14:53:06.960Z",
+            "value": 9.1,
+            "variable": 1,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 52,
+        "fields": {
+            "created_at": "2024-07-21T14:57:21.062Z",
+            "updated_at": "2024-07-21T14:57:21.062Z",
+            "value": 26.0,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 53,
+        "fields": {
+            "created_at": "2024-07-21T14:57:21.896Z",
+            "updated_at": "2024-07-21T14:57:21.896Z",
+            "value": 68.4,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 54,
+        "fields": {
+            "created_at": "2024-07-21T14:57:25.884Z",
+            "updated_at": "2024-07-21T14:57:25.884Z",
+            "value": 25.4,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 55,
+        "fields": {
+            "created_at": "2024-07-21T14:57:26.891Z",
+            "updated_at": "2024-07-21T14:57:26.891Z",
+            "value": 95.7,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 56,
+        "fields": {
+            "created_at": "2024-07-21T14:57:30.906Z",
+            "updated_at": "2024-07-21T14:57:30.906Z",
+            "value": 24.1,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 57,
+        "fields": {
+            "created_at": "2024-07-21T14:57:31.915Z",
+            "updated_at": "2024-07-21T14:57:31.915Z",
+            "value": 39.4,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 58,
+        "fields": {
+            "created_at": "2024-07-21T14:57:36.027Z",
+            "updated_at": "2024-07-21T14:57:36.027Z",
+            "value": 1.9,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 59,
+        "fields": {
+            "created_at": "2024-07-21T14:57:36.887Z",
+            "updated_at": "2024-07-21T14:57:36.887Z",
+            "value": 51.0,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 60,
+        "fields": {
+            "created_at": "2024-07-21T14:57:40.896Z",
+            "updated_at": "2024-07-21T14:57:40.896Z",
+            "value": -5.8,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 61,
+        "fields": {
+            "created_at": "2024-07-21T14:57:41.899Z",
+            "updated_at": "2024-07-21T14:57:41.899Z",
+            "value": 5.8,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 62,
+        "fields": {
+            "created_at": "2024-07-21T14:57:45.908Z",
+            "updated_at": "2024-07-21T14:57:45.908Z",
+            "value": -3.4,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 63,
+        "fields": {
+            "created_at": "2024-07-21T14:57:46.898Z",
+            "updated_at": "2024-07-21T14:57:46.899Z",
+            "value": 54.4,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 64,
+        "fields": {
+            "created_at": "2024-07-21T14:57:50.881Z",
+            "updated_at": "2024-07-21T14:57:50.881Z",
+            "value": 28.9,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 65,
+        "fields": {
+            "created_at": "2024-07-21T14:57:51.864Z",
+            "updated_at": "2024-07-21T14:57:51.864Z",
+            "value": 82.9,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 66,
+        "fields": {
+            "created_at": "2024-07-21T14:57:55.870Z",
+            "updated_at": "2024-07-21T14:57:55.870Z",
+            "value": 7.6,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 67,
+        "fields": {
+            "created_at": "2024-07-21T14:57:56.886Z",
+            "updated_at": "2024-07-21T14:57:56.886Z",
+            "value": 27.4,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 68,
+        "fields": {
+            "created_at": "2024-07-21T14:58:00.930Z",
+            "updated_at": "2024-07-21T14:58:00.930Z",
+            "value": 23.3,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 69,
+        "fields": {
+            "created_at": "2024-07-21T14:58:01.863Z",
+            "updated_at": "2024-07-21T14:58:01.863Z",
+            "value": 8.2,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 70,
+        "fields": {
+            "created_at": "2024-07-21T14:58:05.884Z",
+            "updated_at": "2024-07-21T14:58:05.884Z",
+            "value": 31.1,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 71,
+        "fields": {
+            "created_at": "2024-07-21T14:58:06.882Z",
+            "updated_at": "2024-07-21T14:58:06.882Z",
+            "value": 61.8,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 72,
+        "fields": {
+            "created_at": "2024-07-21T14:58:10.877Z",
+            "updated_at": "2024-07-21T14:58:10.877Z",
+            "value": 1.8,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 73,
+        "fields": {
+            "created_at": "2024-07-21T14:58:11.870Z",
+            "updated_at": "2024-07-21T14:58:11.870Z",
+            "value": 20.4,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 74,
+        "fields": {
+            "created_at": "2024-07-21T14:58:15.887Z",
+            "updated_at": "2024-07-21T14:58:15.887Z",
+            "value": 16.6,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 75,
+        "fields": {
+            "created_at": "2024-07-21T14:58:16.877Z",
+            "updated_at": "2024-07-21T14:58:16.877Z",
+            "value": 96.6,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 76,
+        "fields": {
+            "created_at": "2024-07-21T14:58:20.878Z",
+            "updated_at": "2024-07-21T14:58:20.878Z",
+            "value": 5.8,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 77,
+        "fields": {
+            "created_at": "2024-07-21T14:58:21.896Z",
+            "updated_at": "2024-07-21T14:58:21.896Z",
+            "value": 10.2,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 78,
+        "fields": {
+            "created_at": "2024-07-21T14:58:25.883Z",
+            "updated_at": "2024-07-21T14:58:25.883Z",
+            "value": 15.4,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 79,
+        "fields": {
+            "created_at": "2024-07-21T14:58:26.885Z",
+            "updated_at": "2024-07-21T14:58:26.885Z",
+            "value": 12.2,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 80,
+        "fields": {
+            "created_at": "2024-07-21T14:58:30.893Z",
+            "updated_at": "2024-07-21T14:58:30.893Z",
+            "value": 9.3,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 81,
+        "fields": {
+            "created_at": "2024-07-21T14:58:31.898Z",
+            "updated_at": "2024-07-21T14:58:31.898Z",
+            "value": 91.7,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 82,
+        "fields": {
+            "created_at": "2024-07-21T14:58:35.872Z",
+            "updated_at": "2024-07-21T14:58:35.872Z",
+            "value": 35.6,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 83,
+        "fields": {
+            "created_at": "2024-07-21T14:58:36.887Z",
+            "updated_at": "2024-07-21T14:58:36.887Z",
+            "value": 74.2,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 84,
+        "fields": {
+            "created_at": "2024-07-21T14:58:40.879Z",
+            "updated_at": "2024-07-21T14:58:40.879Z",
+            "value": 36.4,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 85,
+        "fields": {
+            "created_at": "2024-07-21T14:58:41.896Z",
+            "updated_at": "2024-07-21T14:58:41.896Z",
+            "value": 96.0,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 86,
+        "fields": {
+            "created_at": "2024-07-21T14:58:45.897Z",
+            "updated_at": "2024-07-21T14:58:45.897Z",
+            "value": 13.7,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 87,
+        "fields": {
+            "created_at": "2024-07-21T14:58:46.876Z",
+            "updated_at": "2024-07-21T14:58:46.876Z",
+            "value": 27.2,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 88,
+        "fields": {
+            "created_at": "2024-07-21T14:58:50.897Z",
+            "updated_at": "2024-07-21T14:58:50.897Z",
+            "value": 27.9,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 89,
+        "fields": {
+            "created_at": "2024-07-21T14:58:51.918Z",
+            "updated_at": "2024-07-21T14:58:51.918Z",
+            "value": 36.5,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 90,
+        "fields": {
+            "created_at": "2024-07-21T14:58:55.947Z",
+            "updated_at": "2024-07-21T14:58:55.947Z",
+            "value": 32.2,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 91,
+        "fields": {
+            "created_at": "2024-07-21T14:58:56.889Z",
+            "updated_at": "2024-07-21T14:58:56.889Z",
+            "value": 8.2,
+            "variable": 2,
+            "station": 3
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 92,
+        "fields": {
+            "created_at": "2024-07-21T15:10:57.302Z",
+            "updated_at": "2024-07-21T15:10:57.302Z",
+            "value": 11.1,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 93,
+        "fields": {
+            "created_at": "2024-07-21T15:10:58.305Z",
+            "updated_at": "2024-07-21T15:10:58.305Z",
+            "value": 41.0,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 94,
+        "fields": {
+            "created_at": "2024-07-21T15:11:02.273Z",
+            "updated_at": "2024-07-21T15:11:02.273Z",
+            "value": 3.4,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 95,
+        "fields": {
+            "created_at": "2024-07-21T15:11:03.241Z",
+            "updated_at": "2024-07-21T15:11:03.241Z",
+            "value": 77.3,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 96,
+        "fields": {
+            "created_at": "2024-07-21T15:11:07.209Z",
+            "updated_at": "2024-07-21T15:11:07.209Z",
+            "value": 32.7,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 97,
+        "fields": {
+            "created_at": "2024-07-21T15:11:08.247Z",
+            "updated_at": "2024-07-21T15:11:08.247Z",
+            "value": 82.7,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 98,
+        "fields": {
+            "created_at": "2024-07-21T15:11:12.209Z",
+            "updated_at": "2024-07-21T15:11:12.209Z",
+            "value": 34.9,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 99,
+        "fields": {
+            "created_at": "2024-07-21T15:11:13.214Z",
+            "updated_at": "2024-07-21T15:11:13.214Z",
+            "value": 21.5,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 100,
+        "fields": {
+            "created_at": "2024-07-21T15:11:17.203Z",
+            "updated_at": "2024-07-21T15:11:17.203Z",
+            "value": 22.2,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 101,
+        "fields": {
+            "created_at": "2024-07-21T15:11:18.193Z",
+            "updated_at": "2024-07-21T15:11:18.193Z",
+            "value": 41.0,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 102,
+        "fields": {
+            "created_at": "2024-07-21T15:11:22.150Z",
+            "updated_at": "2024-07-21T15:11:22.150Z",
+            "value": 33.7,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 103,
+        "fields": {
+            "created_at": "2024-07-21T15:11:23.196Z",
+            "updated_at": "2024-07-21T15:11:23.196Z",
+            "value": 24.4,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 104,
+        "fields": {
+            "created_at": "2024-07-21T15:11:27.210Z",
+            "updated_at": "2024-07-21T15:11:27.210Z",
+            "value": 23.5,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 105,
+        "fields": {
+            "created_at": "2024-07-21T15:11:28.257Z",
+            "updated_at": "2024-07-21T15:11:28.257Z",
+            "value": 59.3,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 106,
+        "fields": {
+            "created_at": "2024-07-21T15:11:32.212Z",
+            "updated_at": "2024-07-21T15:11:32.212Z",
+            "value": 27.7,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 107,
+        "fields": {
+            "created_at": "2024-07-21T15:11:33.188Z",
+            "updated_at": "2024-07-21T15:11:33.188Z",
+            "value": 23.4,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 108,
+        "fields": {
+            "created_at": "2024-07-21T15:11:37.187Z",
+            "updated_at": "2024-07-21T15:11:37.188Z",
+            "value": 31.8,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 109,
+        "fields": {
+            "created_at": "2024-07-21T15:11:38.194Z",
+            "updated_at": "2024-07-21T15:11:38.194Z",
+            "value": 56.5,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 110,
+        "fields": {
+            "created_at": "2024-07-21T15:11:42.245Z",
+            "updated_at": "2024-07-21T15:11:42.245Z",
+            "value": 24.9,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 111,
+        "fields": {
+            "created_at": "2024-07-21T15:11:43.227Z",
+            "updated_at": "2024-07-21T15:11:43.227Z",
+            "value": 93.3,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 112,
+        "fields": {
+            "created_at": "2024-07-21T15:11:47.199Z",
+            "updated_at": "2024-07-21T15:11:47.199Z",
+            "value": 3.8,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 113,
+        "fields": {
+            "created_at": "2024-07-21T15:11:48.224Z",
+            "updated_at": "2024-07-21T15:11:48.224Z",
+            "value": 83.9,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 114,
+        "fields": {
+            "created_at": "2024-07-21T15:11:52.224Z",
+            "updated_at": "2024-07-21T15:11:52.224Z",
+            "value": -9.8,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 115,
+        "fields": {
+            "created_at": "2024-07-21T15:11:53.201Z",
+            "updated_at": "2024-07-21T15:11:53.201Z",
+            "value": 12.4,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 116,
+        "fields": {
+            "created_at": "2024-07-21T15:11:57.232Z",
+            "updated_at": "2024-07-21T15:11:57.232Z",
+            "value": 6.0,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 117,
+        "fields": {
+            "created_at": "2024-07-21T15:11:58.301Z",
+            "updated_at": "2024-07-21T15:11:58.301Z",
+            "value": 16.7,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 118,
+        "fields": {
+            "created_at": "2024-07-21T15:12:02.307Z",
+            "updated_at": "2024-07-21T15:12:02.307Z",
+            "value": 23.2,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 119,
+        "fields": {
+            "created_at": "2024-07-21T15:12:03.256Z",
+            "updated_at": "2024-07-21T15:12:03.256Z",
+            "value": 52.1,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 120,
+        "fields": {
+            "created_at": "2024-07-21T15:12:07.194Z",
+            "updated_at": "2024-07-21T15:12:07.194Z",
+            "value": 16.1,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 121,
+        "fields": {
+            "created_at": "2024-07-21T15:12:08.190Z",
+            "updated_at": "2024-07-21T15:12:08.190Z",
+            "value": 96.0,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 122,
+        "fields": {
+            "created_at": "2024-07-21T15:12:12.195Z",
+            "updated_at": "2024-07-21T15:12:12.195Z",
+            "value": 27.4,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 123,
+        "fields": {
+            "created_at": "2024-07-21T15:12:13.226Z",
+            "updated_at": "2024-07-21T15:12:13.226Z",
+            "value": 0.8,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 124,
+        "fields": {
+            "created_at": "2024-07-21T15:12:17.207Z",
+            "updated_at": "2024-07-21T15:12:17.207Z",
+            "value": -1.6,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 125,
+        "fields": {
+            "created_at": "2024-07-21T15:12:18.207Z",
+            "updated_at": "2024-07-21T15:12:18.207Z",
+            "value": 8.3,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 126,
+        "fields": {
+            "created_at": "2024-07-21T15:12:22.188Z",
+            "updated_at": "2024-07-21T15:12:22.188Z",
+            "value": 30.2,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 127,
+        "fields": {
+            "created_at": "2024-07-21T15:12:23.218Z",
+            "updated_at": "2024-07-21T15:12:23.218Z",
+            "value": 48.1,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 128,
+        "fields": {
+            "created_at": "2024-07-21T15:12:27.205Z",
+            "updated_at": "2024-07-21T15:12:27.205Z",
+            "value": -1.3,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 129,
+        "fields": {
+            "created_at": "2024-07-21T15:12:28.193Z",
+            "updated_at": "2024-07-21T15:12:28.193Z",
+            "value": 29.5,
+            "variable": 2,
+            "station": 1
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 130,
+        "fields": {
+            "created_at": "2024-07-21T15:12:32.197Z",
+            "updated_at": "2024-07-21T15:12:32.197Z",
+            "value": 20.6,
+            "variable": 1,
+            "station": 2
+        }
+    },
+    {
+        "model": "climatemq.data",
+        "pk": 131,
+        "fields": {
+            "created_at": "2024-07-21T15:12:33.211Z",
+            "updated_at": "2024-07-21T15:12:33.211Z",
+            "value": 9.1,
+            "variable": 2,
+            "station": 1
+        }
+    }
+]

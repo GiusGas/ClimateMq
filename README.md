@@ -1,6 +1,6 @@
 # IoTMq
 
-##To start-up the system:
+## To start-up the system:
 
 - Go to climate-mq folder;
 - run on terminal "docker-compose build";

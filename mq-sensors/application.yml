@@ -1,7 +1,8 @@
 spring:
   profiles:
-    active: topics, sender
-
+    active: topics, random
+  rabbitmq:
+    host: rabbitmq
 logging:
   level:
     org: INFO

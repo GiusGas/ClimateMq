@@ -9,3 +9,4 @@ mq-sensors/.project
 mq-sensors/.classpath
 mq-sensors/RemoteSystemsTempFiles
 __pycache__
+static

@@ -8,24 +8,24 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import it.univaq.iot.mq_sensors.amqp.utils.JsonMessageGenerator;
+import it.univaq.iot.mq_sensors.amqp.utils.JsonMessageRandomGenerator;
 
 public class Sender {
 
 	private static final Logger log = LogManager.getLogger(Sender.class);
-	
+
 	@Autowired
 	private RabbitTemplate template;
 
 	@Autowired
 	private TopicExchange topic;
-	
+
 	@Autowired
-	private JsonMessageGenerator generator;
-	
+	private JsonMessageRandomGenerator generator;
+
 	@Scheduled(fixedRate = 170000, initialDelay = 10)
-	public void sendNewStation() {
-		for (JSONObject station : generator.generateJsonStation()) {
+	public void sendNewStations() {
+		for (JSONObject station : generator.generateRandomJsonStation()) {
 			StringBuilder builder = new StringBuilder(station.toString());
 			String message = builder.toString();
 			template.convertAndSend(topic.getName(), "station.new", message);

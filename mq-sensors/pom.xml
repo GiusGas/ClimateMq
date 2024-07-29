@@ -2,18 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<!-- Your own application should inherit from spring-boot-starter-parent -->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.2</version>
 	</parent>
 	<artifactId>mq-sensors</artifactId>
 	<groupId>it.univaq.iot</groupId>
-	<name>Spring Boot AMQP Sample</name>
-	<description>Spring Boot AMQP Sample</description>
+	<name>Spring Boot AMQP</name>
+	<description>Spring Boot AMQP</description>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<main.basedir>${basedir}/../..</main.basedir>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

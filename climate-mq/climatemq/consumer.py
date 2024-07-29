@@ -1,5 +1,6 @@
 import json
 import pika
+
 import threading
 from django.utils import timezone
 from django.contrib.gis.geos import Point
@@ -32,11 +33,12 @@ class Consumer(threading.Thread):
         
     def callback(self, channel, method, properties, body):
         print(f"arrived {body}")
-        if (method.routing_key == "station.new"):
+        if (method.routing_key == ROUTING_KEY_NEW):
             self.newStation(body)
-        else:
+        elif (method.routing_key == ROUTING_KEY):
             self.saveData(body)
-        print(f" [x] {method.routing_key} saved:{body}")
+            print(f" [x] {method.routing_key} saved:{body}")
+        
         channel.basic_ack(delivery_tag=method.delivery_tag)
         
     def run(self):

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Profile({"topics"})
+@Profile({ "topics" })
 @Configuration
 public class Config {
 
@@ -14,10 +14,16 @@ public class Config {
 		return new TopicExchange("data");
 	}
 
-	@Profile("sender")
+	@Profile({ "random" })
 	@Bean
-	Sender sender() {
+	Sender randomSender() {
 		return new Sender();
+	}
+
+	@Profile({ "fixed" })
+	@Bean
+	FixedSender fixedSender() {
+		return new FixedSender();
 	}
 
 }

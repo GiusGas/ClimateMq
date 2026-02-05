@@ -13,6 +13,11 @@ class Station(BaseModel):
     )
     location = models.PointField()
     accepted = models.BooleanField(default=False)
+    battery_level = models.FloatField(default=100.0)
+    status = models.CharField(
+        max_length=50,
+        default='ACTIVE'
+    )
 
     class Meta:
         ordering = ('id',)
@@ -99,3 +104,36 @@ class Data(BaseModel):
 
     def __str__(self):
         return str(self.value) + self.variable.unit.symbol
+    
+
+class ActuatorAction(BaseModel):
+    """
+    Represents concrete actions the system can perform on a station.
+    Examples: 'Set Frequency', 'Reboot', 'Low Power Mode', 'Emergency Alert'.
+    """
+    name = models.CharField(max_length=100)
+    command_key = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.name
+
+class Goal(BaseModel):
+    """
+    The 'High-Level Goal' specification logic.
+    Defines thresholds that trigger autonomic responses.
+    """
+    OPERATOR_CHOICES = (
+        ('>', 'Greater Than'),
+        ('<', 'Less Than'),
+        ('==', 'Equal To'),
+    )
+
+    name = models.CharField(max_length=255)
+    variable = models.ForeignKey(Variable, on_delete=models.CASCADE)
+    operator = models.CharField(max_length=2, choices=OPERATOR_CHOICES)
+    threshold = models.FloatField()
+    action = models.ForeignKey(ActuatorAction, on_delete=models.SET_NULL, null=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.name}: {self.variable.name} {self.operator} {self.threshold}"

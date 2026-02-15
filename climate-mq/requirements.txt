@@ -5,3 +5,9 @@ djangorestframework-gis==1.0.0
 djangorestframework==3.15.1
 pika
 djangorestframework-datatables
+numpy
+torch
+huggingface_hub
+celery
+scikit-learn
+pandas

@@ -13,11 +13,6 @@ class Station(BaseModel):
     )
     location = models.PointField()
     accepted = models.BooleanField(default=False)
-    battery_level = models.FloatField(default=100.0)
-    status = models.CharField(
-        max_length=50,
-        default='ACTIVE'
-    )
 
     class Meta:
         ordering = ('id',)
@@ -84,6 +79,27 @@ class Sensor(BaseModel):
         on_delete=models.RESTRICT
     )
 
+    variable = models.ForeignKey(
+        Variable,
+        on_delete=models.RESTRICT
+    )
+
+    battery_level = models.FloatField(default=100.0)
+    status = models.CharField(
+        max_length=50,
+        default='ACTIVE'
+    )
+
+    predicted_value = models.FloatField(
+        null=True,
+        default=None
+    )
+
+    predicted_at = models.DateTimeField(
+        null=True,
+        default=None
+    )
+
 class Data(BaseModel):
     value = models.FloatField(
         max_length=32
@@ -91,11 +107,11 @@ class Data(BaseModel):
 
     variable = models.ForeignKey(
         Variable,
-        on_delete=models.RESTRICT,
+        on_delete=models.RESTRICT
     )
 
-    station = models.ForeignKey(
-        Station,
+    sensor = models.ForeignKey(
+        Sensor,
         on_delete=models.RESTRICT
     )
 
@@ -113,6 +129,7 @@ class ActuatorAction(BaseModel):
     """
     name = models.CharField(max_length=100)
     command_key = models.CharField(max_length=50)
+    value = models.FloatField(null=True)
     
     def __str__(self):
         return self.name
@@ -137,3 +154,14 @@ class Goal(BaseModel):
 
     def __str__(self):
         return f"{self.name}: {self.variable.name} {self.operator} {self.threshold}"
+    
+class SensorGoal(BaseModel):
+    sensor = models.OneToOneField('Sensor', on_delete=models.CASCADE, related_name='goal')
+    max_variance = models.FloatField(default=5.0) 
+    
+    consecutive_anomalies = models.IntegerField(default=0)
+    
+    is_broken = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Goal for {self.sensor.variable.name} - Max Var: {self.max_variance}"

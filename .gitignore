@@ -10,3 +10,6 @@ mq-sensors/.classpath
 mq-sensors/RemoteSystemsTempFiles
 __pycache__
 static
+/.vscode
+climate-mq/celerybeat-schedule
+/climate-mq/climenv

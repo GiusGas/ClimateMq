@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -165,5 +164,18 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
+    },
+}
+
+# Celery Configuration
+CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672//'
+
+# The Schedule
+from celery.schedules import crontab
+
+CELERY_BEAT_SCHEDULE = {
+    'predict-every-hour': {
+        'task': 'climatemq.tasks.trigger_hourly_predictions',
+        'schedule': crontab(minute=0, hour='*'), 
     },
 }

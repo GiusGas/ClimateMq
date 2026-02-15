@@ -35,7 +35,7 @@ class StationViewSet(viewsets.ReadOnlyModelViewSet):
 
 class LastDataViewSet(viewsets.ReadOnlyModelViewSet):
 
-    bbox_filter_field = "station__location"
+    bbox_filter_field = "sensor__station__location"
     filter_backends = (
         gis_filters.InBBoxFilter,
     )
@@ -44,7 +44,7 @@ class LastDataViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self): 
         variable_id = self.request.GET.get('variable_id','')
-        return Data.objects.filter(variable_id=variable_id, station__accepted=True).order_by('station__id','-created_at').distinct('station__id')
+        return Data.objects.filter(variable_id=variable_id, sensor__station__accepted=True).order_by('sensor__id','-created_at').distinct('sensor__id')
 
 
 class StationTableViewSet(viewsets.ReadOnlyModelViewSet):
@@ -60,10 +60,10 @@ class DataViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = DataSerializer
     filter_backends = [DatatablesFilterBackend]
     filterset_class = DataFilter
-    filterset_fields = ['station__id']
+    filterset_fields = ['sensor__station__id']
 
     def get_queryset(self):
-        return Data.objects.filter(station__id=self.request.GET.get('station__id', None))
+        return Data.objects.filter(sensor__station__id=self.request.GET.get('station__id', None))
 
 class DataChartViewSet(viewsets.ReadOnlyModelViewSet):
 
@@ -85,9 +85,9 @@ class DataChartViewSet(viewsets.ReadOnlyModelViewSet):
         print(labels)
         print(start_time)
         print(end_time)
-        filtered_data = Data.objects.filter(station__id=request.GET.get('station__id', None))
+        filtered_data = Data.objects.filter(sensor__station__id=request.GET.get('station__id', None))
         data_list = filtered_data.values(
-            "station__name", "variable__name", day = TruncDay('created_at')
+            "sensor__station__name", "variable__name", day = TruncDay('created_at')
         ).annotate(avg = Avg('value')).order_by('day').filter(day__range=(start_time, end_time))
 
         labels = sorted(labels)

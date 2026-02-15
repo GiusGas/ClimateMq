@@ -1,0 +1,72 @@
+<div class="row text-center mb-4">
+    <div class="col-md-3">
+        <div class="card bg-primary text-white p-3">
+            <h3>{{ total_stations }}</h3>
+            <p>Total Stations</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-success text-white p-3">
+            <h3>{{ active_sensors }}</h3>
+            <p>Active Sensors</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-secondary text-white p-3">
+            <h3>{{ inactive_sensors }}</h3>
+            <p>Inactive Sensors</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-danger text-white p-3">
+            <h3>{{ broken_sensors }}</h3>
+            <p>Broken Sensors</p>
+        </div>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Sensor/Station</th>
+            <th>Battery</th>
+            <th>Status</th>
+            <th>Msgs Today</th>
+            <th>Sending Rate</th>
+            <th>Next Hour Value (Predicted)</th>
+            <th>Predicted At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in sensors %}
+        <tr>
+            <td>{{ s.name }}</td>
+            <td>
+                <div class="progress" style="height: 20px;">
+                    <div class="progress-bar {% if s.battery < 30 %}bg-danger{% else %}bg-success{% endif %}" 
+                         style="width: {{ s.battery }}%">{{ s.battery }}%</div>
+                </div>
+            </td>
+            <td>
+                <span class="badge {% if s.status == 'ACTIVE' %}bg-success{% elif s.status == 'INACTIVE' %}bg-secondary{% else %}bg-danger{% endif %}">
+                    {{ s.status }}
+                </span>
+            </td>
+            <td>{{ s.total_today }}</td>
+            <td>
+                {% if s.rate > 0 %}
+                    <strong>1 msg every {{ s.rate }}s</strong>
+                {% else %}
+                    <span class="text-muted">Calculating...</span>
+                {% endif %}
+            </td>
+            <td>
+                {{ s.predicted }}
+            </td>
+            <td>
+                {{ s.predicted_at }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

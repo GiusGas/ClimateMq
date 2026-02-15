@@ -16,12 +16,12 @@ class StationSerializer(
 
 class LastDataSerializer(GeoFeatureModelSerializer):
 
-    station_location = GeometryField(source='station.location')
+    sensor_station_location = GeometryField(source='sensor.station.location')
     unit_symbol = serializers.CharField(source='variable.unit.symbol')
-    station_name = serializers.CharField(source='station.name')
+    station_name = serializers.CharField(source='sensor.station.name')
     class Meta:
-        fields = ("value", "unit_symbol", "station_name")
-        geo_field = "station_location"
+        fields = ("id", "value", "unit_symbol", "station_name")
+        geo_field = "sensor_station_location"
         model = Data
 
 class DataSerializer(serializers.ModelSerializer):
@@ -40,10 +40,10 @@ class DataAvgSerializer(serializers.ModelSerializer):
     unit_symbol = serializers.CharField()
     variable_name = serializers.CharField()
     day = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S")
-    station__name = serializers.CharField()
+    sensor__station__name = serializers.CharField()
 
     class Meta:
-        fields = ['station__name', 'unit_symbol', 'variable_name', 'day', 'avg']
+        fields = ['sensor__station__name', 'unit_symbol', 'variable_name', 'day', 'avg']
 
 class StationTableSerializer(serializers.ModelSerializer):
     latitude = serializers.SerializerMethodField()

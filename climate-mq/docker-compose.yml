@@ -43,18 +43,22 @@ services:
         - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
 
-  # spring-app:
-  #   image: eclipse-temurin:17-jdk-focal
-  #   container_name: spring-app
-  #   build: 
-  #     context: ../mq-sensors/
-  #     dockerfile: Dockerfile
-  #   depends_on: 
-  #     - rabbitmq
-  #   logging:
-  #     driver: "json-file"
-  #     options:
-  #       max-size: "1M"
-  #       max-file: "10"
-  #   profiles:
-  #     - donotstart
+  celery:
+    build: .
+    command: celery -A geodjango.celery:app worker -l info
+    volumes:
+      - .:/climatemq
+    environment:
+      - DJANGO_SETTINGS_MODULE=geodjango.settings
+    depends_on:
+      - rabbitmq
+      - postgres
+
+  celery-beat:
+    build: .
+    command: celery -A geodjango.celery:app beat -l info
+    volumes:
+      - .:/climatemq
+    depends_on:
+      - rabbitmq
+      - postgres

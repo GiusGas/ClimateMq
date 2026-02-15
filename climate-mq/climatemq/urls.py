@@ -1,6 +1,6 @@
 from django.urls import path
 
-from climatemq.views import StationsMapView, StationsListView, StationsDashboardView, StationDashboardView
+from climatemq.views import StationsMapView, StationsListView, StationsDashboardView, StationDashboardView, monitoring_view
 
 app_name = "climatemq"
 
@@ -11,4 +11,5 @@ urlpatterns = [
     path("stations_list/", StationsListView.as_view()),
     path("dashboard/", StationsDashboardView.as_view()),
     path("dashboard/<int:station_id>", StationDashboardView.as_view()),
+    path("monitoring/", monitoring_view, name='monitoring')
 ]
